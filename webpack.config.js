@@ -5,18 +5,20 @@ module.exports = {
     devtool: 'inline-source-map',
     output: {
         filename: 'bundle.js',
+        library: "?",
+        libraryTarget: "umd",
         path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
             }
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.ts', '.js']
     }
 };
