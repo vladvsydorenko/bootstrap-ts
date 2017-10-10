@@ -1,5 +1,5 @@
-describe('example', () => {
-    it('example', () => {
-        expect(10).toBe(10);
-    });
+describe('?', () => {
+  it('?', () => {
+    expect(1).toBe(1);
+  });
 });
