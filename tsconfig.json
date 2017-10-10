@@ -9,5 +9,5 @@
     "allowJs": false,
     "noImplicitAny": true
   },
-  "exclude": ["test"]
+  "exclude": ["__test__"]
 }

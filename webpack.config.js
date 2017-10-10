@@ -4,7 +4,7 @@ module.exports = {
     entry: './src/index.ts',
     devtool: 'inline-source-map',
     output: {
-        filename: 'bundle.js',
+        filename: 'main.js',
         library: "?",
         libraryTarget: "umd",
         path: path.resolve(__dirname, 'dist')
@@ -12,13 +12,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
             }
         ]
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js']
     }
 };
