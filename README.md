@@ -1,2 +1,2 @@
 # jest
-This sample includes `typescript` and `jest`.
+This sample includes `typescript`, `react`, `postcss` and `jest`.
