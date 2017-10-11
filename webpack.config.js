@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: './src/index.tsx',
     devtool: 'inline-source-map',
     output: {
         filename: 'main.js',
@@ -18,10 +18,22 @@ module.exports = {
                 options: {
                     configFile: "tsconfig.prod.json"
                 }
+            },
+            {
+                enforce: 'pre',
+                test: /\.css$/,
+                use: [
+                    { loader: 'style-loader' },
+                    {
+                        loader: 'typings-for-css-modules-loader',
+                        options: { modules: true, namedExport: true, camelCase: true }
+                    },
+                    { loader: 'postcss-loader' }
+                ]
             }
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js', '.css']
     }
 };
