@@ -7,11 +7,11 @@ import postcssPlugin from 'rollup-plugin-postcss-modules';
 
 const initCssTypeDeclarations = () => {
     /* initialize CSS files because of a catch-22 situation: https://github.com/rollup/rollup/issues/1404 */
-    for (const css of glob.sync('src/**/*.css')) {
+    glob.sync('src/**/*.css').forEach((css) => {
         const definition = `${css}.d.ts`
         if (!fs.existsSync(definition))
             fs.writeFileSync(definition, 'const mod: { [cls: string]: string }\nexport default mod\n');
-    }
+    });
 };
 
 initCssTypeDeclarations();
